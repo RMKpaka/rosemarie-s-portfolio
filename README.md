@@ -17,13 +17,11 @@ Welcome to my Personal Portfolio Website, a fully responsive and interactive web
 ```
 portfolio-website/
 ├── assets/
+│   ├── css/        # Stylesheets
 │   ├── img/        # Images and QR code
 │   ├── js/         # JavaScript files
 │   ├── pdf/        # Resume file
-│   │── /scss/      # SCSS files for styling
 ├── index.html      # Main portfolio page
-├── style.css       # Main stylesheet
-├── main.js         # JavaScript functionalities
 ├── README.md       # Project documentation
 ```
 

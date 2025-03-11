@@ -1,0 +1,668 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  --primary-color: #4a90e2;
+  --secondary-color: #50c878;
+  --black-color: #1c1c1c;
+  --white-color: #fdfdfd;
+  --text-color: #5a5a5a;
+  --background-color: #f0f4f9;
+  --container-color: #ffffff;
+  --card-bg: linear-gradient(135deg, #e0f7fa, #ffffff);
+  --highlight-color: #ff7b54;
+  --chatbot-bg: #ffffff;
+  --chatbot-header-bg: var(--primary-color);
+  --chatbot-text-color: #333;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --h1-font-size: 3rem;
+  --h2-font-size: 2.5rem;
+  --h3-font-size: 2rem;
+  --normal-font-size: 1.5rem;
+  --small-font-size: 0.5rem;
+  --smaller-font-size: 0.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: all 0.4s ease;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  color: var(--black-color);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/*=============== CAROUSEL STYLING ===============*/
+.carousel-container {
+  position: relative;
+  max-width: 600px;
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-image {
+  display: none;
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border: 5px solid black;
+  border-radius: 10px;
+}
+
+.carousel-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+
+.carousel-container .prev {
+  left: 10px;
+}
+
+.carousel-container .next {
+  right: 10px;
+}
+
+.carousel-container button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*=============== HEADER & NAVIGATION ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--container-color);
+  padding: 1rem 3rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav__link {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.nav__link:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+/*=============== PROFILE PICTURE & HOME ===============*/
+.home__profile-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid var(--primary-color);
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.home {
+  position: relative;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.home__name {
+  font-size: var(--h1-font-size);
+  color: var(--primary-color);
+}
+
+.home__description {
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+/*=============== SHAPES ===============*/
+.home::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+  background-color: var(--highlight-color);
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+/* Add background shapes across all sections with varied sizes and floating elements */
+section {
+  position: relative;
+}
+
+section::before, section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: -1; /* Ensure shapes stay behind content */
+}
+
+/* Top-right circle - varies in size */
+section::before {
+  top: -50px;
+  right: -50px;
+  width: calc(100px + 5vw);
+  height: calc(100px + 5vw);
+  background-color: var(--primary-color);
+}
+
+/* Bottom-left circle - varies in size */
+section::after {
+  bottom: -50px;
+  left: -50px;
+  width: calc(80px + 3vw);
+  height: calc(80px + 3vw);
+  background-color: var(--highlight-color);
+}
+
+/* Floating middle shapes */
+section .floating-shape {
+  position: absolute;
+  width: calc(50px + 2vw);
+  height: calc(50px + 2vw);
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: floatAnimation 5s infinite alternate ease-in-out;
+  z-index: -1; /* Keep floating shapes behind content */
+}
+
+/* Specific floating shape positions */
+.floating-shape:nth-child(1) {
+  top: 30%;
+  left: 20%;
+}
+.floating-shape:nth-child(2) {
+  top: 50%;
+  right: 25%;
+}
+.floating-shape:nth-child(3) {
+  bottom: 20%;
+  left: 40%;
+}
+
+@keyframes floatAnimation {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+/* Ensure the home section retains its original shape styling */
+.home::before {
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+}
+
+.home::after {
+  bottom: -100px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+}
+
+/*=============== SECTIONS ===============*/
+section {
+  padding: 4rem 2rem;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section__title::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background-color: var(--primary-color);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+/* About Section Styling - Boxed Paragraphs */
+.about p {
+  background-color: #FDB7EA; /* Pastel color */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Skills Section - Boxed Layout */
+.skills ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three boxes per row */
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  background-color: #B7B1F2; /* Light pastel box */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/*=============== PROJECTS SECTION ===============*/
+.projects__item {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projects__item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Projects Section - Boxed Layout with Images */
+.projects ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two boxes per row */
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.projects li {
+  background-color: #fdf6e3; /* Light pastel box */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+}
+
+.projects li img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 1rem auto 0;
+  border: 3px solid black;
+  border-radius: 8px;
+}
+
+/*=============== EXPERIENCE SECTION ===============*/
+/* Experience Section - Boxed Layout */
+.experience ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three boxes per row */
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.experience li {
+  background-color: #89A8B2; /* Light pastel box */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/*=============== CERTIFICATIONS SECTION ===============*/
+/* Certifications Section - Boxed Layout */
+.certifications ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three boxes per row */
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.certifications li {
+  background-color: #C6E7FF; /* Light pastel box */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/*=============== RESUME SECTION ===============*/
+.resume iframe {
+  border: none;
+  margin-top: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/*=============== CONTACT FORM ===============*/
+#contact-form {
+  background: var(--container-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form input, #contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--text-color);
+  border-radius: 8px;
+}
+
+#contact-form button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+  background-color: var(--secondary-color);
+}
+
+/*=============== FOOTER STYLING ===============*/
+.footer {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 2rem;
+    width: 50%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: auto; /* Ensures it is centered */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Footer Container */
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* Footer Text */
+.footer__text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Social Links */
+.footer__social {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.footer__link {
+    font-size: 1.6rem;
+    color: var(--white-color);
+    transition: color 0.3s ease-in-out;
+}
+
+.footer__link:hover {
+    color: var(--primary-color);
+}
+
+/* Ensure Footer Stays at the Bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+.qr-code img {
+    width: 300px;  /* Adjust size to make it smaller */
+    height: 300px; /* Adjust size to make it smaller */
+    display: block;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.qr-code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: #f4f4f4; /* Light background for the box */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px; /* Limit width */
+    margin: auto;
+}
+
+.qr-code-container img {
+    width: 300px; /* Adjust size */
+    height: 300px; /* Adjust size */
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.qr-code-caption {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+/*=============== CHATBOT STYLING ===============*/
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Prevents scrollbar issue */
+}
+
+/* Chatbot Header (Always Visible) */
+#chatbot-header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: bold;
+}
+
+/* Chatbot Box (Initially Collapsed) */
+#chatbot-box {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out; /* Smooth open/close effect */
+    background: white;
+    padding: 0 15px;
+}
+
+/* When chatbot is open */
+.show-chatbot {
+    max-height: 300px !important; /* Expand smoothly */
+    padding-top: 15px; /* Add padding back */
+}
+
+/* Chatbot Messages */
+.chatbot-input-container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.chatbot-input-container input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chatbot-input-container button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+#chatbot-messages {
+    max-height: 250px; /* Limit height so scroll can appear */
+    overflow-y: auto; /* Enable scrolling */
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column; /* Keeps messages stacked */
+}
+
+/* Fix for Flex Issues */
+#chatbot-box {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom Scrollbar */
+#chatbot-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chatbot-messages::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+#chatbot-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#chatbot-messages p {
+    font-size: 0.85rem; /* Smaller text */
+    line-height: 1.3; /* Better spacing */
+    color: #333; /* Darker text for readability */
+    word-wrap: break-word; /* Ensures long words wrap properly */
+    margin: 5px 0;
+}
+
+#chatbot-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid var(--text-color);
+  border-radius: 6px;
+}
+
+#chatbot-send {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+
+

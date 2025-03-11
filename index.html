@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosemarie Kpaka | Portfolio</title>
+
+    <!-- External Styles and Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <span class="nav__logo-name">Rosemarie Kpaka</span>
+            </a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li><a href="#about" class="nav__link">About Me</a></li>
+                    <li><a href="#projects" class="nav__link">Projects</a></li>
+                    <li><a href="#resume" class="nav__link">Resume</a></li>
+                    <li><a href="#contact" class="nav__link nav__link-button">Contact Me</a></li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+            <div class="nav__close" id="nav-close">
+                <i class="ri-close-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <img src="assets/img/Profile.jpeg" alt="Rosemarie Kpaka" class="home__profile-pic">
+                <h1 class="home__name">Rosemarie Kpaka</h1>
+                <p class="home__description">Cybersecurity & IT Support Specialist with expertise in risk assessment, networking, and cloud computing.</p>
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/rosemarie-kpaka-9265431aa" target="_blank" class="home__social-link" style="font-size: 3rem;"><i class="ri-linkedin-box-line"></i></a>
+                    <a href="https://github.com/RMKpaka" target="_blank" class="home__social-link" style="font-size: 3rem;"><i class="ri-github-line"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about section" id="about">
+            <h2 class="section__title">About Me</h2>
+            <p>Dedicated and detail-oriented IT professional with expertise in cybersecurity, IT support, and risk management. Skilled in troubleshooting technical issues, securing network infrastructure, and providing exceptional customer service. Passionate about technology and committed to continuous learning and professional development.</p>
+        </section>
+
+        <section class="skills section" id="skills">
+            <h2 class="section__title">Skills</h2>
+            <ul>
+                <li><strong> Security & Risk Management: </strong> Vulnerability Assessment, Risk Mitigation, Intrusion Detection</li>
+                <li><strong>Operating Systems: </strong> Windows, Linux/UNIX</li>
+                <li><strong>Programming & Scripting: </strong> Python, Java (Secure Coding)</li>
+                <li><strong>Networking & Protocols: </strong> TCP/IP, Firewalls, VPNs</li>
+                <li><strong>Cybersecurity Tools: </strong> SIEM, IDS/IPS, OWASP ZAP</li>
+                <li><strong>Data Protection: </strong> Encryption, Access Control, Incident Response</li>
+            </ul>
+        </section>
+
+        <section class="projects section" id="projects">
+    <h2 class="section__title">Projects</h2>
+    <ul>
+        <li>
+            <strong>Cybersecurity Risk Assessment Tool</strong>
+            <p>Developed a tool to assess security vulnerabilities.</p>
+            <img src="assets/img/RA Tool.jpg" alt="Cybersecurity Risk Assessment Tool">
+        </li>
+        <li>
+            <strong>Automated IT Help Desk System</strong>
+            <p>Implemented automation for resolving technical issues.</p>
+            <img src="assets/img/Automation.jpg" alt="Automated IT Help Desk System">
+        </li>
+    </ul>
+</section>
+
+
+        <section class="resume section" id="resume">
+            <h2 class="section__title">Resume</h2>
+            <p><a href="assets/pdf/Rosemarie_Kpaka_Resume.pdf" download>Download My Resume</a></p>
+            <iframe src="assets/pdf/Rosemarie_Kpaka_Resume.pdf" width="100%" height="600px"></iframe>
+        </section>
+
+        <section class="education section" id="education">
+            <h2 class="section__title">Education</h2>
+            <p>Bowie State University – Bachelor of Science in Computer Technology, Health Technology, and Cybersecurity (Expected May 2025)</p>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="assets/img/Bowie1.jpg" alt="Bowie State University" class="carousel-image">
+                    <img src="assets/img/Bowie2.jpg" alt="Bowie State University" class="carousel-image">
+                    <img src="assets/img/Bowie3.jpg" alt="Bowie State University" class="carousel-image">
+                    <img src="assets/img/Bowie4.jpg" alt="Bowie State University" class="carousel-image">
+                    <img src="assets/img/Bowie5.jpg" alt="Bowie State University" class="carousel-image">
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="experience section" id="experience">
+            <h2 class="section__title">Experience</h2>
+            <ul>
+                <li><strong>Patient Care Technician</strong> - Specialty Home Health Care (July 2023 - Present)</li>
+                <li><strong>Service Desk/IT Support Technician</strong> - Universal Healthcare Inc. (Jan 2019 - Aug 2022)</li>
+                <li><strong>Administrative Assistant</strong> - Monument Academy (Aug 2022 - June 2023)</li>
+                <li><strong>COVID-19 VAC/IMM Ambassador</strong> - Maxim HealthCare Staffing (Aug 2022 - June 2023)</li>
+                <li><strong>Customer Service Representative</strong> - Walmart Landover Hills (Jan 2015 - Dec 2018)</li>
+            </ul>
+        </section>
+
+        <section class="certifications section" id="certifications">
+            <h2 class="section__title">Certifications</h2>
+            <ul>
+                <li>CompTIA Security+ Certification (2023) - Completed</li>
+                <li>Introduction to Cybersecurity Tools & Cyber Attack Certification (March 2023) - Completed</li>
+                <li>Phlebotomy Technologist Certification (October 2020) - Completed</li>
+                <li>Registered Behavior Technician Certification – CR Institute (December 2022) - Completed</li>
+                <li>Clinical Nursing Assistant Certification – The Nursing Assistant Academy (December 2020)</li>
+                <li>Home Health Aide Certification & License – Allied Health Institute (October 2016)</li>
+            </ul>
+        </section>
+
+       <section class="contact section" id="contact">
+    <h2 class="section__title">Contact Me</h2>
+    <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" autocomplete="off" required></textarea>
+
+        <button type="submit">Send</button>
+        <p id="contact-message"></p>
+    </form>
+</section>
+
+        <section class="qr-code section">
+    <h2 class="section__title">Scan to Open</h2>
+    <div class="qr-code-container">
+        <img src="assets/img/qrcode.png" alt="QR Code">
+        <p class="qr-code-caption">Scan this QR code to access my portfolio and resume!</p>
+    </div>
+</section>
+
+        <div id="chatbot-container">
+    <div id="chatbot-header">
+        <span>Chat with me!</span>
+        <i class="ri-chat-3-line"></i>
+    </div>
+    <div id="chatbot-box">
+        <div id="chatbot-messages"></div>
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="Type a message..." />
+            <button id="chatbot-send">Send</button>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <footer class="footer">
+    <div class="footer__container container">
+        <p class="footer__text">© 2025 Rosemarie Kpaka. All Rights Reserved.</p>
+        <div class="footer__social">
+            <a href="https://www.linkedin.com/in/rosemarie-kpaka-9265431aa" target="_blank" class="footer__link"><i class="ri-linkedin-box-line"></i></a>
+            <a href="https://github.com/RMKpaka" target="_blank" class="footer__link"><i class="ri-github-line"></i></a>
+            <a href="mailto:your-email@example.com" class="footer__link"><i class="ri-mail-line"></i></a>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+</body>
+</html>

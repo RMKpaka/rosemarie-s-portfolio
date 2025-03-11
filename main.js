@@ -15,12 +15,6 @@ if (navClose) {
     });
 }
 
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-    text: "https://yourwebsite.com",
-    width: 300,  // Smaller width
-    height: 300  // Smaller height
-});
-
 /*=============== REMOVE MENU MOBILE ===============*/
 const navLink = document.querySelectorAll('.nav__link');
 const linkAction = () => {
@@ -253,4 +247,10 @@ document.addEventListener("DOMContentLoaded", function () {
             sendChatMessage();
         }
     });
+});
+
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: "https://yourwebsite.com",
+    width: 300,  // Smaller width
+    height: 300  // Smaller height
 });
